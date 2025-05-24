@@ -2,6 +2,7 @@ package day01;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +38,7 @@ public class P05_LoginTest {
     public void beforeTest(){
         driver.get("https://babayigit.net/test/");
         login=driver.findElement(By.xpath("//img[@alt='Login']"));
+        login.click();
     }
 
     @AfterEach
@@ -47,6 +49,18 @@ public class P05_LoginTest {
 
     @Test
     public void test01(){
+
+        driver.findElement(By.id("username")).sendKeys("babayigit");
+        driver.findElement(By.id("password")).sendKeys("baba123"+ Keys.TAB);
+        driver.findElement(By.xpath("//input[@type='button']")).click();
+
+    }
+    @Test
+    public void test02(){
+
+        driver.findElement(By.id("username")).sendKeys("babayigit");
+        driver.findElement(By.id("password")).sendKeys("Mb3471&");
+        driver.findElement(By.xpath("//input[@type='button']")).click();
 
     }
 
