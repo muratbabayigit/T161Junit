@@ -6,14 +6,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
 public class P05_LoginTest {
     static WebDriver driver;
     static WebElement login;
-    static WebElement loginButton;
     static String loginResult;
+    static WebElement loginButton;
+
+
+
        /*
         1-https://babayigit.net/test/ adresine gidin
         2-Login butonuna tıklayın
@@ -37,7 +41,7 @@ public class P05_LoginTest {
     @BeforeEach
     public void beforeTest(){
         driver.get("https://babayigit.net/test/");
-        login=driver.findElement(By.xpath("//img[@alt='Login']"));
+        login = driver.findElement(By.xpath("//img[@alt='Login']"));
         login.click();
     }
 
@@ -51,16 +55,18 @@ public class P05_LoginTest {
     public void test01(){
 
         driver.findElement(By.id("username")).sendKeys("babayigit");
-        driver.findElement(By.id("password")).sendKeys("baba123"+ Keys.TAB);
-        driver.findElement(By.xpath("//input[@type='button']")).click();
+        driver.findElement(By.id("password")).sendKeys("baba123"+ Keys.TAB +Keys.ENTER);
+
+
+
 
     }
     @Test
     public void test02(){
 
         driver.findElement(By.id("username")).sendKeys("babayigit");
-        driver.findElement(By.id("password")).sendKeys("Mb3471&");
-        driver.findElement(By.xpath("//input[@type='button']")).click();
+        driver.findElement(By.id("password")).sendKeys("Mb3471&"+ Keys.TAB +Keys.ENTER);
+
 
     }
 
