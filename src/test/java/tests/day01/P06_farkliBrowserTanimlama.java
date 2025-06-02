@@ -1,4 +1,4 @@
-package day01;
+package tests.day01;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
